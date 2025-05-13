@@ -1,0 +1,197 @@
+# 40 Clients, Mixed Full & Partial Matches with Cancellations
+40
+.
+# Connect all threads (0 to 39)
+0 o
+1 o
+2 o
+3 o
+4 o
+5 o
+6 o
+7 o
+8 o
+9 o
+10 o
+11 o
+12 o
+13 o
+14 o
+15 o
+16 o
+17 o
+18 o
+19 o
+20 o
+21 o
+22 o
+23 o
+24 o
+25 o
+26 o
+27 o
+28 o
+29 o
+30 o
+31 o
+32 o
+33 o
+34 o
+35 o
+36 o
+37 o
+38 o
+39 o
+.
+# Pair 1: Partial match – buy order remains partially filled (expected leftover 20)
+0 B 1001 GOOG 50 100
+1 S 1002 GOOG 50 80
+# Pair 2: Full match
+2 B 1003 GOOG 50 70
+3 S 1004 GOOG 50 70
+# Pair 3: Partial match – sell order overfills buy order (expected leftover 10 on sell side)
+4 B 1005 GOOG 50 50
+5 S 1006 GOOG 50 60
+# Pair 4: Partial match – buy order overfills sell order (expected leftover 20 on buy side)
+6 B 1007 GOOG 50 120
+7 S 1008 GOOG 50 100
+# Pair 5: Exact match
+8 B 1009 GOOG 50 90
+9 S 1010 GOOG 50 90
+# Pair 6: Partial match – buy order partially filled (expected leftover 20)
+10 B 1011 GOOG 50 80
+11 S 1012 GOOG 50 60
+# Pair 7: Partial match – sell order overfills buy order (expected leftover 10)
+12 B 1013 GOOG 50 110
+13 S 1014 GOOG 50 120
+# Pair 8: Exact match
+14 B 1015 GOOG 50 100
+15 S 1016 GOOG 50 100
+# Pair 9: Partial match – buy order partially filled (expected leftover 20)
+16 B 1017 GOOG 50 70
+17 S 1018 GOOG 50 50
+# Pair 10: Partial match – sell order overfills buy order (expected leftover 10)
+18 B 1019 GOOG 50 60
+19 S 1020 GOOG 50 70
+# Pair 11: Exact match
+20 B 1021 GOOG 50 80
+21 S 1022 GOOG 50 80
+# Pair 12: Partial match – buy order overfills sell order (expected leftover 10 on sell side)
+22 B 1023 GOOG 50 90
+23 S 1024 GOOG 50 100
+# Pair 13: Partial match – buy order overfills sell order (expected leftover 10 on buy side)
+24 B 1025 GOOG 50 110
+25 S 1026 GOOG 50 100
+# Pair 14: Exact match
+26 B 1027 GOOG 50 70
+27 S 1028 GOOG 50 70
+# Pair 15: Exact match
+28 B 1029 GOOG 50 80
+29 S 1030 GOOG 50 80
+# Pair 16: Partial match – buy order fully fills sell order (expected leftover 10 on buy side)
+30 B 1031 GOOG 50 100
+31 S 1032 GOOG 50 90
+# Pair 17: Full match
+32 B 1033 GOOG 50 120
+33 S 1034 GOOG 50 120
+# Pair 18: Partial match – sell order overfills buy order (expected leftover 10 on sell side)
+34 B 1035 GOOG 50 60
+35 S 1036 GOOG 50 70
+# Pair 19: Exact match
+36 B 1037 GOOG 50 90
+37 S 1038 GOOG 50 90
+# Pair 20: Partial match – buy order fully filled (expected leftover 10 on sell side)
+38 B 1039 GOOG 50 100
+39 S 1040 GOOG 50 110
+.
+# Wait for all orders to process
+0 w 1001
+1 w 1002
+2 w 1003
+3 w 1004
+4 w 1005
+5 w 1006
+6 w 1007
+7 w 1008
+8 w 1009
+9 w 1010
+10 w 1011
+11 w 1012
+12 w 1013
+13 w 1014
+14 w 1015
+15 w 1016
+16 w 1017
+17 w 1018
+18 w 1019
+19 w 1020
+20 w 1021
+21 w 1022
+22 w 1023
+23 w 1024
+24 w 1025
+25 w 1026
+26 w 1027
+27 w 1028
+28 w 1029
+29 w 1030
+30 w 1031
+31 w 1032
+32 w 1033
+33 w 1034
+34 w 1035
+35 w 1036
+36 w 1037
+37 w 1038
+38 w 1039
+39 w 1040
+.
+# Cancellation commands: attempt cancellation for selected orders
+# For Pair 1: cancel buy order (should succeed) and cancel sell order (should fail)
+0 C 1001
+1 C 1002
+# For Pair 3: attempt cancellations as an extra check
+4 C 1005
+5 C 1006
+.
+# Disconnect all threads
+0 x
+1 x
+2 x
+3 x
+4 x
+5 x
+6 x
+7 x
+8 x
+9 x
+10 x
+11 x
+12 x
+13 x
+14 x
+15 x
+16 x
+17 x
+18 x
+19 x
+20 x
+21 x
+22 x
+23 x
+24 x
+25 x
+26 x
+27 x
+28 x
+29 x
+30 x
+31 x
+32 x
+33 x
+34 x
+35 x
+36 x
+37 x
+38 x
+39 x

@@ -1,0 +1,22 @@
+# Partial Matching Orders
+3
+# Global barrier: start all threads simultaneously
+.
+# Each thread connects to the server
+0 o
+1 o
+2 o
+# Global barrier: ensure all connections are established
+.
+# Place orders: one buy order and two sell orders at the same price
+0 B 1001 GOOG 50 100
+1 S 1002 GOOG 50 70
+2 S 1003 GOOG 50 70
+# Wait for the orders to complete
+0 w 1001
+1 w 1002
+2 w 1003
+# Disconnect all threads
+0 x
+1 x
+2 x

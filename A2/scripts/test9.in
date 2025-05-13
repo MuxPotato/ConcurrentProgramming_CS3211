@@ -1,0 +1,55 @@
+# Large Single-Instrument Queue with Multiple Price Levels
+12
+.
+0 o
+1 o
+2 o
+3 o
+4 o
+5 o
+6 o
+7 o
+8 o
+9 o
+10 o
+11 o
+.
+# Orders on GOOG at different prices and quantities
+0 B 1001 GOOG 55 100
+1 B 1002 GOOG 54 80
+2 S 1003 GOOG 50 90
+3 S 1004 GOOG 51 70
+4 B 1005 GOOG 56 60
+5 S 1006 GOOG 52 50
+6 B 1007 GOOG 55 40
+7 S 1008 GOOG 53 100
+8 B 1009 GOOG 54 70
+9 S 1010 GOOG 50 80
+10 B 1011 GOOG 53 90
+11 S 1012 GOOG 52 60
+.
+0 w 1001
+1 w 1002
+2 w 1003
+3 w 1004
+4 w 1005
+5 w 1006
+6 w 1007
+7 w 1008
+8 w 1009
+9 w 1010
+10 w 1011
+11 w 1012
+.
+0 x
+1 x
+2 x
+3 x
+4 x
+5 x
+6 x
+7 x
+8 x
+9 x
+10 x
+11 x

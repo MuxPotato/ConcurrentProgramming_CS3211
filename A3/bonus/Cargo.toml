@@ -1,0 +1,14 @@
+[package]
+name = "cs3211_assignment_3"
+version = "0.1.1"
+edition = "2024"
+
+[dependencies]
+rand = "0.9.0"
+rand_chacha = "0.9.0"
+rand_xoshiro = "0.7.0"
+tokio = { version = "1.44.1", features = ["full"] }
+tokio-rayon = "2.1.0"
+
+rayon      = "1.10.0"    
+num_cpus = "1"

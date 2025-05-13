@@ -1,0 +1,18 @@
+# Fully Matching Orders
+2
+# Global barrier: ensure all threads start at the same time
+.
+# Each thread connects to the server
+0 o
+1 o
+# Global barrier: wait until all connections are established
+.
+# Place orders: Thread 0 places a buy order and Thread 1 places a matching sell order
+0 B 1001 GOOG 50 100
+1 S 1002 GOOG 50 100
+# Wait for the orders to complete
+0 w 1001
+1 w 1002
+# Disconnect all threads
+0 x
+1 x

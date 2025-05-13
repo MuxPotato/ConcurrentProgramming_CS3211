@@ -1,0 +1,32 @@
+# Multiple Instruments with Phase-Level Concurrency
+6
+.
+0 o
+1 o
+2 o
+3 o
+4 o
+5 o
+.
+# GOOG orders: Threads 0, 1, 2 place buy orders
+0 B 1001 GOOG 50 100
+1 B 1002 GOOG 50 100
+2 B 1003 GOOG 50 100
+# AMZN orders: Threads 3, 4, 5 place sell orders
+3 S 1004 AMZN 150 100
+4 S 1005 AMZN 150 100
+5 S 1006 AMZN 150 100
+.
+0 w 1001
+1 w 1002
+2 w 1003
+3 w 1004
+4 w 1005
+5 w 1006
+.
+0 x
+1 x
+2 x
+3 x
+4 x
+5 x

@@ -1,0 +1,20 @@
+# Partial Fulfillment with Cancellation
+2
+.
+0 o
+1 o
+.
+# Thread 0 places a sell order for 100 shares; Thread 1 places a buy order for 120 shares
+0 S 1001 GOOG 50 100
+1 B 1002 GOOG 50 120
+.
+# Wait for orders to process (sell fully executed, buy has a leftover of 20)
+0 w 1001
+1 w 1002
+.
+# Cancellation: Cancel order 1001 (should fail as fully executed) and cancel order 1002 (should succeed on remaining quantity)
+0 C 1001
+1 C 1002
+.
+0 x
+1 x

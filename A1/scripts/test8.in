@@ -1,0 +1,51 @@
+# Multi-Instrument Stress Test (10 Clients)
+10
+.
+0 o
+1 o
+2 o
+3 o
+4 o
+5 o
+6 o
+7 o
+8 o
+9 o
+.
+# GOOG orders: Threads 0 and 1
+0 B 1001 GOOG 50 100
+1 S 1002 GOOG 50 100
+# AMZN orders: Threads 2 and 3
+2 B 1003 AMZN 150 50
+3 S 1004 AMZN 150 50
+# TSLA orders: Threads 4 and 5
+4 B 1005 TSLA 200 70
+5 S 1006 TSLA 200 70
+# NFLX orders: Threads 6 and 7
+6 B 1007 NFLX 300 40
+7 S 1008 NFLX 300 40
+# Additional orders (partial match scenario) from Threads 8 and 9 on GOOG
+8 B 1009 GOOG 50 50
+9 S 1010 GOOG 50 60
+.
+0 w 1001
+1 w 1002
+2 w 1003
+3 w 1004
+4 w 1005
+5 w 1006
+6 w 1007
+7 w 1008
+8 w 1009
+9 w 1010
+.
+0 x
+1 x
+2 x
+3 x
+4 x
+5 x
+6 x
+7 x
+8 x
+9 x

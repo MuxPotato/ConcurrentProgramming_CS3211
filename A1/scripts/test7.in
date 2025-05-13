@@ -1,0 +1,27 @@
+# Interleaved Orders with Sleep Delays
+6
+.
+0 o
+1 o
+2 o
+3 o
+4 o
+5 o
+.
+# Thread 0 submits a buy order and then sleeps to simulate delay
+0 B 1001 GOOG 50 100
+0 s 200
+# Threads 1 and 2 submit sell orders that will partially match the buy order
+1 S 1002 GOOG 50 60
+2 S 1003 GOOG 50 60
+.
+0 w 1001
+1 w 1002
+2 w 1003
+.
+0 x
+1 x
+2 x
+3 x
+4 x
+5 x
